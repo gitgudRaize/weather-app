@@ -1,0 +1,48 @@
+.dailyForecast {
+  align-items: center;
+  text-align: center;
+  min-height: 126px;
+  @include mqh(736px) {
+    min-height: 129px;
+  }
+  @include mqh(1024px) {
+    min-height: 200px;
+  }
+  @include mq(1024px) {
+    min-height: 200px;
+  }
+
+  .dailyForecast__title {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    @include mq(768px) {
+      font-size: 1.3rem;
+    }
+  }
+
+  .dailyForecast__contents {
+    @include flexCenter;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    margin-bottom: 0.5rem;
+    color: $font-color;
+    padding: 0.5rem 0;
+
+    .forecastDay {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      font-size: 0.9rem;
+      @include mq(375px) {
+        font-size: 1rem;
+      }
+      @include mq(768px) {
+        font-size: 1.1rem;
+      }
+
+      .forecastDay__errorIcon {
+        font-size: 2rem;
+      }
+    }
+  }
+}
