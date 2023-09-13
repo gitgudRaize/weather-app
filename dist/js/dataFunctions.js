@@ -25,7 +25,7 @@ export const getCoordsFromApi = async (entryText) => {
   // }
 
   const urlDataObj = {
-    text: entryText,
+    entryText: entryText,
   };
   console.log(urlDataObj);
   console.log(typeof urlDataObj);
@@ -34,7 +34,10 @@ export const getCoordsFromApi = async (entryText) => {
       method: "POST",
       body: JSON.stringify(urlDataObj),
     });
+    console.log(dataStream);
+    console.log(typeof dataStream);
     const jsonData = await dataStream.json();
+    console.log(jsonData);
     return jsonData;
   } catch (err) {
     console.error(err);
