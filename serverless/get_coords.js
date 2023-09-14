@@ -4,8 +4,9 @@ const { WEATHER_API_KEY } = process.env;
 
 exports.handler = async (event, context) => {
   const params = JSON.parse(event.body);
+  console.log(params);
   const { entryText } = params;
-  const url = `https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${entryText}`;
+  const url = `api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${entryText}`;
   const encodedUrl = encodeURI(url);
   try {
     const dataStream = await fetch(encodedUrl);
