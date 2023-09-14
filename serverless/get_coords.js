@@ -15,7 +15,6 @@ exports.handler = async (event, context) => {
       body: JSON.stringify(jsonData),
     };
   } catch (err) {
-    console.error(err);
     return {
       statusCode: 422,
       body: err.stack,
