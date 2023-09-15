@@ -37,6 +37,7 @@ export const getCoordsFromApi = async (entryText) => {
     // console.log(typeof dataStream);
     const jsonData = await dataStream.json();
     console.log(jsonData);
+    console.log(typeof jsonData);
     return jsonData;
   } catch (err) {
     console.error(err);

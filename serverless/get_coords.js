@@ -1,10 +1,11 @@
 const fetch = require("node-fetch");
+// import fetch from "node-fetch";
 
 const { WEATHER_API_KEY } = process.env;
 
 exports.handler = async (event, context) => {
+  // export const fetch = async (event, context) => {
   const params = JSON.parse(event.body);
-  console.log(params);
   const { entryText } = params;
   const url = `api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${entryText}`;
   const encodedUrl = encodeURI(url);
