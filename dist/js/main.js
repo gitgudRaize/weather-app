@@ -64,7 +64,7 @@ const geoSuccess = async (position) => {
       setLocationObject(currentLoc, myCoordsObj);
       updateDataAndDisplay(currentLoc);
     } else {
-      displayError("Connection Error", "Connection Error");
+      displayError("Error", "Error");
     }
   } catch (err) {
     console.error(err);
@@ -159,7 +159,7 @@ const submitNewLocation = async (event) => {
     } else if (coordsData.error) {
       displayError(coordsData.error.message, coordsData.error.message);
     } else {
-      displayError("Connection Error");
+      displayError("Error");
     }
   } catch (err) {
     console.error(err);
@@ -174,7 +174,7 @@ const updateDataAndDisplay = async (locationObj) => {
     } else if (weatherJson.error) {
       displayError(weatherJson.error.message, weatherJson.error.message);
     } else {
-      displayError("Connection Error");
+      displayError("Error");
     }
   } catch (err) {
     console.error(err);
