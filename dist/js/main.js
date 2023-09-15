@@ -174,7 +174,7 @@ const updateDataAndDisplay = async (locationObj) => {
     } else if (weatherJson.error) {
       displayError(weatherJson.error.message, weatherJson.error.message);
     } else {
-      displayError("Error");
+      displayError("As Error");
     }
   } catch (err) {
     console.error(err);
