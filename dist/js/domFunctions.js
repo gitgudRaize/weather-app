@@ -302,7 +302,6 @@ const createMainIconDiv = (iconUrl, altText) => {
     mainIcon.src = `//cdn.weatherapi.com/weather/128x128/${icon}`;
     mainIcon.src = iconUrl;
     mainIcon.title = altText;
-    mainIcon.ariaHidden = true;
     mainIcon.width = window.innerWidth < 768 ? "96" : "160";
     mainIcon.height = window.innerWidth < 768 ? "96" : "160";
   } else {
@@ -351,9 +350,10 @@ const displaySixDayForecast = (weatherJson, unit) => {
 };
 
 const createDailyForecastDivs = (dailyWeather, unit) => {
-  let dayAbbreviationText, dayIcon, maxTemp, minTemp;
+  let dayText, dayAbbreviationText, dayIcon, maxTemp, minTemp;
   if (typeof dailyWeather === "object") {
-    dayAbbreviationText = getDayAbbreviation(dailyWeather.date);
+    dayText = getDayText(dailyWeather.date);
+    dayAbbreviationText = dayText.slice(0, 3).toUpperCase();
     dayIcon = createDailyForecastIcon(
       dailyWeather.day.condition.icon,
       dailyWeather.day.condition.text
@@ -377,15 +377,17 @@ const createDailyForecastDivs = (dailyWeather, unit) => {
     "dayAbbreviation",
     dayAbbreviationText
   );
+  dayAbbreviation.role = "heading";
+  dayAbbreviation.ariaLabel = `${dayText}`;
   const dayHigh = createElem("p", "dayHigh", maxTemp);
   const dayLow = createElem("p", "dayLow", minTemp);
   return [dayAbbreviation, dayIcon, dayHigh, dayLow];
 };
 
-const getDayAbbreviation = (date) => {
+const getDayText = (date) => {
   const dateObj = new Date(date);
-  const dateString = dateObj.toString();
-  return dateString.slice(0, 3).toUpperCase();
+  const dateString = dateObj.toDateString();
+  return dateString;
 };
 
 const createDailyForecastIcon = (iconUrl, altText) => {

@@ -1,20 +1,20 @@
 {
-  "siteId": "dfd76bf6-c7de-4e69-a314-9e558aade660",
-  "geolocation": {
-    "data": {
-      "city": "Bandung",
-      "country": {
-        "code": "ID",
-        "name": "Indonesia"
-      },
-      "subdivision": {
-        "code": "JB",
-        "name": "West Java"
-      },
-      "timezone": "Asia/Jakarta",
-      "latitude": -6.9217,
-      "longitude": 107.6071
-    },
-    "timestamp": 1694764210721
-  }
+	"siteId": "dfd76bf6-c7de-4e69-a314-9e558aade660",
+	"geolocation": {
+		"data": {
+			"city": "Bandung",
+			"country": {
+				"code": "ID",
+				"name": "Indonesia"
+			},
+			"subdivision": {
+				"code": "JB",
+				"name": "West Java"
+			},
+			"timezone": "Asia/Jakarta",
+			"latitude": -6.9217,
+			"longitude": 107.6071
+		},
+		"timestamp": 1694856060312
+	}
 }
